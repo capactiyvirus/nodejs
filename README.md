@@ -26,6 +26,10 @@ we can further this by specifying the data by including customer id such as this
 
 Similarly with PUT ![put](https://user-images.githubusercontent.com/46537188/120080856-83cbb380-c06f-11eb-81b8-038a9e526037.png)
 
+Overall the restful convenstion is this --- ![restful conv](https://user-images.githubusercontent.com/46537188/120080903-ad84da80-c06f-11eb-950e-8677019f9ad9.png)
+
+
+
 
 
 
