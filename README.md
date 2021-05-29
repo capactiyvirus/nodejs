@@ -1,5 +1,18 @@
 # nodejs - express
 
+
+## Before you get started there are some really useful tools you can download!
+
+#### [Joi](https://www.npmjs.com/package/joi)
+  - very useful for validation
+#### [Postman](https://www.postman.com/)
+  - very useful for testing endpoints
+#### [Express](https://www.npmjs.com/package/express)
+  - the framework we are using to create our restful service
+#### [Nodemon](https://www.npmjs.com/package/nodemon)
+  - Allows you to refresh the nodejs app with out restarting it!!! (11/10) usefulness!!!!
+
+
 little thing with example of how to use nodejs
 
 ## What are Restful API's/ Restful Services
