@@ -14,6 +14,13 @@ REST - Representational State Transfer
 
 first part is the protocol, domain, can include api but it would be the directory what we would be using (the resource)
 
+Standarad Http methods used to interact with server ----> 
+  - GET (getting data)
+  - POST (creating data)
+  - PUT (updating data)
+  - DELETE (deleting data)
+ 
+
  
 
 
