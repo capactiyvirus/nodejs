@@ -24,6 +24,7 @@ So as an example of a GET request ... ![Get Example](https://user-images.githubu
 
 we can further this by specifying the data by including customer id such as this ![csu1](https://user-images.githubusercontent.com/46537188/120080818-64348b00-c06f-11eb-88c7-33ff899f9713.png)
 
+Similarly with PUT ![put](https://user-images.githubusercontent.com/46537188/120080856-83cbb380-c06f-11eb-81b8-038a9e526037.png)
 
 
 
