@@ -12,6 +12,8 @@ REST - Representational State Transfer
   - ![example](https://user-images.githubusercontent.com/46537188/120080626-bde88580-c06e-11eb-9761-dbfd232d1bb0.png)
   - this is an example of a company with a url(endpoint)
 
+first part is the protocol, domain, can include api but it would be the directory what we would be using (the resource)
+
  
 
 
