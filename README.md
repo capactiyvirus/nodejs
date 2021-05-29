@@ -9,6 +9,9 @@ little thing with example of how to use nodejs
   
 REST - Representational State Transfer
   - We use simple http protocols to create, read, update and delete data (CRUD Operations)
+  - ![example](https://user-images.githubusercontent.com/46537188/120080626-bde88580-c06e-11eb-9761-dbfd232d1bb0.png)
+  - this is an example of a company with a url(endpoint)
+
  
 
 
