@@ -28,7 +28,7 @@ logger.log("hello");
 //HTTP --> Module
 const server = http.createServer((req,res) => {
     if(req.url === '/') {
-        res.write("hellowWorld");
+        res.write("Hello World");
         res.end();
     }
 
