@@ -20,6 +20,7 @@ Standarad Http methods used to interact with server ---->
   - PUT (updating data)
   - DELETE (deleting data)
  
+So as an example of a GET request ... ![Get Example](https://user-images.githubusercontent.com/46537188/120080764-3f401800-c06f-11eb-9d9e-d74a7d5c3142.png)
 
  
 
