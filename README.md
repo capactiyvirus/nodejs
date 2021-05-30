@@ -1,5 +1,5 @@
 # nodejs - express
-
+[ThisSite](https://node-js-express-project.herokuapp.com/)
 
 ## Before you get started there are some really useful tools you can download!
 
@@ -40,6 +40,36 @@ we can further this by specifying the data by including customer id such as this
 Similarly with PUT ![put](https://user-images.githubusercontent.com/46537188/120080856-83cbb380-c06f-11eb-81b8-038a9e526037.png)
 
 Overall the restful convenstion is this --- ![restful conv](https://user-images.githubusercontent.com/46537188/120080903-ad84da80-c06f-11eb-950e-8677019f9ad9.png)
+
+
+After setting up your app you can upload it to git etc do what ever you want to save it.
+
+we will be using Postgre SQL and heroku to host since they are free.
+
+First make a heroku account its really ez.
+after you can link your REST API with heroku via --- ![heroku](https://user-images.githubusercontent.com/46537188/120087969-3e27de80-c0a1-11eb-804c-553fd26d027f.png)
+
+and select an addon in resources and pick postgre sql 
+
+```
+heroku addons:create heroku-postgresql:hobby-dev
+
+heroku pg:credentials DATABASE
+or
+heroku pg:credentials:url
+
+```
+then when you get ur url and other detail for the db just link them together and you should get a heroku page
+![dbpage](https://user-images.githubusercontent.com/46537188/120088037-c312f800-c0a1-11eb-97f1-26262195534b.png)
+
+which then if you install postgre sql 
+
+you can get a sql CLI ![cli](https://user-images.githubusercontent.com/46537188/120088058-ee95e280-c0a1-11eb-91cf-8de36c1dabb3.png)
+
+and use it to upload tables, etc
+
+Currently Hosted on [ThisSite](https://node-js-express-project.herokuapp.com/)
+
 
 
 
