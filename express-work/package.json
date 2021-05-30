@@ -12,6 +12,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "joi": "^17.4.0",
+    "pg": "^8.6.0",
     "serverless-http": "^2.7.0"
+  },
+  "engines": {
+    "node": "14.17.0"
   }
 }

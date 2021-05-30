@@ -2,9 +2,28 @@ const Joi = require('joi');
 const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
+const  { Pool } = require('pg');
+const path = require('path');
+
+const pool = new Pool({
+    user: 'fuwlklnhiecfrg',
+    host: 'ec2-54-87-112-29.compute-1.amazonaws.com',
+    database: 'd1k0s5qvr4hud',
+    password: 'e7ef70a4b0ede709fc226d7c83c753a962ae09a22a1f8658196ad602d8e4d914',
+    port: 5432,
+    ssl:{
+        rejectUnauthorized: false,
+        
+    }
+  });
+  
+app.set('view engine', 'ejs');
 
 //middlewear used in request processing pipeline
 app.use(express.json());
+
+app.use(express.static('/'))
+
 
 
 const courses = [
@@ -15,14 +34,41 @@ const courses = [
 ];
 
 
-app.get('/',(req,res)=>{
-    res.send("hello world");
+app.get('/', async (req,res)=>{
 
+    const responce = await pool.query('SELECT * FROM persons');
+    console.log(responce.rows);
+    res.render('index', {user: responce.rows})
+    //res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+// const getUsers = async (req,res) => {
+//     const responce = await pool.query('SELECT * FROM persons');
+//     console.log(responce.rows);
+//     res.send('persons');
+// };
 
-app.get('/api/courses',(req,res)=>{
-    res.send(courses);
+
+app.get('/api/courses', async (req,res)=>{
+    //const client = await pool.connect();
+    //console.log(client);
+
+    ////// I HAVE NO IDEA WHY THIS IS NOT WORKING
+    const responce = await pool.query('SELECT * FROM persons');
+    console.log(responce.rows);
+    //res.sendFile(path.join(__dirname+'/index.html'));
+    //res.send('/index.html');
+    //res.send({success: true, message: '<p>'+responce.rows+'</p>'});
+    res.render('index',{user: responce.rows});
+    
+
+    // const responce = pool.query('SELECT * FROM persons;');
+    // console.log(responce.rows);
+    // res.send('persons');
+    //res.send(courses);
+
+    //to enteract with the sql db we need to use pool
+    //pool.query('SELECT * FROM users');
 });
 
 
@@ -57,7 +103,7 @@ function validateCourse(course){
 }
 
 
-app.put('/api/courses/:id',(req,res)=>{
+app.put('/api/courses/:id', async (req,res)=>{
     //look up courses
     const course = courses.find(c => c.id === parseInt(req.params.id));
     //if not existing return 404
@@ -76,6 +122,10 @@ app.put('/api/courses/:id',(req,res)=>{
        return;
     }
 
+    const responce = await pool.query('SELECT * FROM persons', (err, res) => {
+        if (err) throw err;
+        console.log(res);
+    });
     //updatecourse
     course.name = req.body.name;
 
@@ -86,9 +136,18 @@ app.put('/api/courses/:id',(req,res)=>{
 
 
 
-app.get('/api/courses/:id', (req,res)=>{
+app.get('/api/courses/:id', async (req,res)=>{
     const course = courses.find(c => c.id === parseInt(req.params.id));
-    if (!course) return res.status(404).send("The Course with the given ID was not found");  //404
+    ///FIX THIS SHIT
+    // const responce = await pool.query('SELECT * FROM persons WHERE firstname=$firstname'|[firstname], (err, res) => {
+    //     if (err) throw err;
+    //     console.log(res.rows);
+    // });
+    
+    //console.log(responce.rows);
+
+
+    //if (!course) return res.status(404).send("The Course with the given ID was not found");  //404
     res.send(course);
     
 
@@ -164,7 +223,9 @@ app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 
 
-module.exports.handler = serverless(app);
+// module.exports = {
+//     getUsers
+// };
 
 // app.post()
 // app.put()
